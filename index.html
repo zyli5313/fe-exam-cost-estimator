@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FE Exam Cost Estimator</title>
+<meta name="description" content="Add up FE exam registration, board fees, retakes and prep so you know the real cash needed before you sit.">
+<meta name="robots" content="index,follow">
+<style>
+:root{--bg:#0f172a;--fg:#e2e8f0;--muted:#94a3b8;--accent:#38bdf8;--card:#1e293b}*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.55}main{max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem}h1{margin:0 0 .5rem}p.lead{color:var(--muted)}.card{background:var(--card);border-radius:12px;padding:1rem 1.15rem;margin:1rem 0}label{display:flex;justify-content:space-between;gap:1rem;margin:.45rem 0;align-items:center}input{width:7rem;background:#0b1220;border:1px solid #334155;color:var(--fg);border-radius:8px;padding:.4rem .5rem}a{color:var(--accent)}#total{font-size:1.4rem;font-weight:700}footer{margin-top:2rem;padding-top:1rem;border-top:1px solid #334155;color:var(--muted);font-size:.9rem}.guides{list-style:none;padding:0}.guides li{margin:.35rem 0}
+</style></head><body><main>
+<h1>FE exam cost estimator</h1>
+<p class="lead">Defaults mirror common published fees; edit any line for your state board. Details and caveats live on AceFEExam.</p>
+<div class="card" id="form">
+<label>NCEES registration <input data-k="reg" type="number" value="225"></label>
+<label>State board application (est.) <input data-k="board" type="number" value="50"></label>
+<label>Retake fee if needed <input data-k="retake" type="number" value="175"></label>
+<label>Prep materials / mocks <input data-k="prep" type="number" value="99"></label>
+<label>Travel / lodging buffer <input data-k="travel" type="number" value="0"></label>
+<p id="total">Total: $549</p>
+</div>
+<ul class="guides">
+<li><a href="https://acefeexam.com/fe-exam-cost" target="_blank" rel="noopener">FE exam cost: registration, board fees &amp; retakes</a></li>
+<li><a href="https://acefeexam.com/pricing" target="_blank" rel="noopener">AceFEExam pricing (one-time, no subscription)</a></li>
+<li><a href="https://acefeexam.com/fe-exam-passing-score" target="_blank" rel="noopener">What score do you need to pass the FE?</a></li>
+<li><a href="https://acefeexam.com/fe-exam-pass-rates" target="_blank" rel="noopener">FE exam pass rates</a></li>
+<li><a href="https://acefeexam.com/fe-exam-results" target="_blank" rel="noopener">FE exam results timing</a></li>
+<li><a href="https://acefeexam.com/free-mock" target="_blank" rel="noopener">Free full-length FE Civil mock</a></li>
+<li><a href="https://acefeexam.com/fe-civil-practice-exam-pdf" target="_blank" rel="noopener">Free FE Civil practice exam PDF</a></li>
+<li><a href="https://acefeexam.com/" target="_blank" rel="noopener">AceFEExam home</a></li>
+</ul>
+<footer>Fan-made companion for <a href="https://acefeexam.com/" target="_blank" rel="noopener">acefeexam.com</a>. Fees change — verify with NCEES and your board.</footer>
+<script>
+function sum(){var t=0;document.querySelectorAll('#form input').forEach(function(i){t+=(+i.value||0)});document.getElementById('total').textContent='Total: $'+t;}
+document.querySelectorAll('#form input').forEach(function(i){i.addEventListener('input',sum)});sum();
+</script>
+</main></body></html>
